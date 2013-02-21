@@ -29,6 +29,13 @@ from TreeElement import TreeElement
 # Class eBookTreeElement
 #=====================================================================================================
 class eBookTreeElement(TreeElement):
+	"""
+	A class derived from TreeElement
+	This class is used to model the information structure for a epub eBook file.
+	As the TreeElement is already designet to model xml document structures, this
+	class only needs to implement a method to create a xml string from the given
+	tree
+	"""
 
 	def toXMLString(self, level=0):
 		"""
@@ -47,7 +54,7 @@ class eBookTreeElement(TreeElement):
 		# if the tag also has attributes, put them into the tag
 		if self.attributes != []:
 			for attribute in self.attributes:
-				result += ' %s=\"%s\"' % (attribute.get_key(), attribute.get_value(),)
+				result += ' %s=\"%s\"' % (attribute.getTag(), attribute.getValue(),)
 
 		# if there is neither content nor children, close the tag
 		if ((self.content == None or self.content == '') and self.children == []):
@@ -73,6 +80,10 @@ class eBookTreeElement(TreeElement):
 
 		result += ' ' * (4 * level)
 		result += '</%s>\n' % (self.tag,)
+		
+		# if there is a tail, put it at the end of the tag
+		if not (self.tail == None or self.tail == ''):
+			result += self.tail + '\n'
 
 		return result
 

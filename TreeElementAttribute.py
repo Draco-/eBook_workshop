@@ -31,26 +31,40 @@ A class to model the attributes for a tree element
 class TreeElementAttribute:
 	"""
 	A class to represent the attributes for a tree element
+	Each attribute can have an id, a tag (used to represent it in an xml document)
+	and a value
 	"""
 	
-	def __init__(self, key=None, value=None):
+	def __init__(self, key=None, value=None, tag=None):
 		"""
-		Create an object, that represents a key value pair as a attribute
+		Create an object, that represents a key value pair as an attribute
+		The tag field contains the tag, that is used to represent the attribute
+		within a XML document
 		"""
 		if key == None or key == '':
 			raise KeyError
 			
 		self.key = key
 		self.value = value
+		if tag != None:
+			self.tag = tag
+		else:
+			self.tag = key
 	
-	def get_key(self):
+	def getKey(self):
 		return self.key
 		
-	def get_value(self):
+	def getValue(self):
 		return self.value
+	
+	def getTag(self):
+		return self.tag
 		
-	def set_value(self, value):
+	def setValue(self, value):
 		self.value = value
+		
+	def setTag(self, tag):
+		self.tag = tag
 		
 	def clear(self):
 		self.value = None

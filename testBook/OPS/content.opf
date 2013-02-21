@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf">
+      <dc:title>E-Pub Testbuch</dc:title>
+      <dc:creator>Baumeister Juergen</dc:creator>
+      <dc:contributor opf:role="bkp">Notepad</dc:contributor>
+      <dc:language>de</dc:language>
+      <dc:identifier id="BookId">E-Pub Testbuch</dc:identifier>
+      <dc:subject>Test</dc:subject>
+      <dc:date>2013</dc:date>
+      <meta name="cover" content="cover"/>
+    </metadata>
+    <manifest>
+        <item id="toc_ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+        <item id="cover" href="Cover.jpg" media-type="image/jpeg" />
+        <item id="CoverPage_html" href="CoverPage.html" media-type="application/xhtml+xml" />
+        <item id="styles_css" href="styles.css" media-type="text/css" />
+        <item id="section-0001_html" href="section-0001.html" media-type="application/xhtml+xml" />
+    </manifest>
+    <spine toc="toc_ncx">
+        <itemref idref="CoverPage_html" linear="no"/>
+        <itemref idref="section-0001_html"/>
+    </spine>
+</package>
